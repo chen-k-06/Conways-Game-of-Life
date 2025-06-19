@@ -13,16 +13,23 @@
 
 <body>
     <div id="help-popup" class="hidden">
-        <p>Each square (or "cell") on the grid can be either alive or dead, and they evolve according to the
+        <p>
+            To play, draw patterns by clicking on squares and then press "START". To reset the board, press
+            "REFRESH". To access the Github, press "GITHUB".<br><br>
+            Each square (or "cell") on the grid can be either alive or dead, and they evolve according to the
             following rules: <br><br>
 
             1. Any live cell with fewer than two live neighbours dies (referred to as underpopulation).<br>
             2. Any live cell with more than three live neighbours dies (referred to as overpopulation).<br>
             3. Any live cell with two or three live neighbours lives, unchanged, to the next generation.<br>
-            4. Any dead cell with exactly three live neighbours comes to life.<br><br></p>
+            4. Any dead cell with exactly three live neighbours comes to life.<br><br>
 
-        <video width="640" height="360" controls>
-            <source src="your-video.mp4" type="video/mp4">
+            Alive cells are black. Dead cells are white.<br><br>The initial configuration of cells can be created by a
+            human, but all generations thereafter are completely determined by the above rules. The goal of the game is
+            to find patterns that evolve in interesting ways.<br></p>
+
+        <video autoplay muted loop width="500" height="360" controls>
+            <source src="game-of-life-demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <button id="close-help">Close</button>
@@ -32,9 +39,10 @@
         <button id="help-button">?</button>
         <h1><u>CONWAY'S GAME OF LIFE</u></h1>
         <button id="start-button">START</button>
-        <a href="https://chen-k-06.github.io/Conways-Game-of-Life/"> <button id="refresh-button">REFRESH</button>
+        <a href=""> <button id="refresh-button">REFRESH</button>
         </a>
-        <a href="https://github.com/chen-k-06/Conways-Game-of-Life"> <button id="github-button">GITHUB</button>
+        <a href="https://github.com/chen-k-06/Conways-Game-of-Life" target="_blank"> <button
+                id="github-button">GITHUB</button>
         </a>
     </div>
 

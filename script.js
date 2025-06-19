@@ -18,11 +18,15 @@ for (let row = 0; row < SIDE_LENGTH; row++) {
 // event listener for clicks
 let boxes = document.querySelectorAll(".box");
 boxes.forEach((box, index) => {
+
     let row = Math.floor(index / SIDE_LENGTH);
     let col = index % SIDE_LENGTH;
     console.log(`Row: ${row}, Col: ${col}`);
     document.querySelector(`[data-row="${row}"][data-col="${col}"]`).addEventListener("click", () => {
         if (inGame == false) { // don't register any clicks after 'Start' button has been pressed
+            let popup = document.getElementById("help-popup")
+            if (!popup.classList.contains("hidden")) return; // don't register clicks if help popup is open
+
             if (box.classList.contains("alive")) {
                 box.classList.remove("alive");
                 box.classList.add("dead");

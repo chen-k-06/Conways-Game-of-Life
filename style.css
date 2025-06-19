@@ -68,13 +68,13 @@ h1 {
 #help-popup {
     background-color: rgba(202, 202, 202, 0.9);
     border: 2px dotted darkgray;
-    padding: 2em;
+    padding: 1.5em;
     text-align: center;
     animation: fade-in 0.3s ease-in-out;
     border-radius: 8px;
     font-size: 1.3rem;
     width: 50%;
-    top: 0;
+    top: 25px;
     left: 0;
     right: 0;
     bottom: 0;
