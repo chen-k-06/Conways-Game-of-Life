@@ -10,4 +10,5 @@ A neighbor is any of the 8 cells adjacent to a given cell, including diagonals.
 The initial configuration of cells can be created by a human, but all generations thereafter are completely determined by the above rules. The goal of the game is to find patterns that evolve in interesting ways
 
 Play here: https://chen-k-06.github.io/Conways-Game-of-Life/
+
 Learn more here (+ source): https://conwaylife.com/
