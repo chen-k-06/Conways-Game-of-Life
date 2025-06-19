@@ -29,6 +29,10 @@ button {
     align-items: center;
 }
 
+a {
+    text-decoration: none;
+}
+
 #start-button {
     width: 90px;
     height: 50px;
