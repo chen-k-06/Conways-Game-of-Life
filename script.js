@@ -63,6 +63,7 @@ async function start_game() {
             }
         });
 
+        // check if any live cells remain
         let alive_boxes = document.querySelectorAll(".alive");
         if (alive_boxes.length === 0) {
             console.log("Game over: no cells alive");
@@ -93,6 +94,12 @@ document.getElementById("close-help").addEventListener("click", () => {
 });
 
 function get_states(boxes) {
+    /**
+     * Counts the number of alive neighbors the box at index has
+     *
+     * @param {box[]} boxes - a list of boxes
+     * @returns {boolean[]} The states of each box in boxes
+     */
     let states = []
     boxes.forEach((box, index) => {
         const isAlive = box.classList.contains("alive");
@@ -129,7 +136,6 @@ function count_neighbors(index) {
      * Counts the number of alive neighbors the box at index has
      *
      * @param {number} index - index of the box
- 
      * @returns {number} The number of living neighbors box has, [0,8]
      */
 
@@ -205,6 +211,12 @@ function count_neighbors(index) {
 }
 
 function revive(box) {
+    /**
+     * Takes a dead box and brings it back to life
+     *
+     * @param {box} box - the box to be revived 
+     */
+
     if (box.classList.contains("dead")) {
         box.classList.remove("dead");
     }
@@ -212,6 +224,12 @@ function revive(box) {
 }
 
 function kill(box) {
+    /**
+     * Kills an alive box
+     * 
+     * @param {box} box - the box to be killed 
+    */
+
     if (box.classList.contains("alive")) {
         box.classList.remove("alive");
     }
