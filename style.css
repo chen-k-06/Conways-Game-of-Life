@@ -1,0 +1,127 @@
+body {
+    background-color: whitesmoke;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Baloo 2', 'Fredoka', 'Quicksand', 'Comic Sans MS', cursive, sans-serif;
+}
+
+::selection {
+    background-color: palegreen;
+    color: white;
+}
+
+/* Top bar styling */
+#top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background-color: palegreen;
+    border: 2px solid green;
+    margin: 10px;
+    box-shadow: 3px 3px black;
+    cursor: pointer;
+    font-size: large;
+    font-weight: 800;
+}
+
+#start-button {
+    width: 90px;
+    height: 50px;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+#help-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+h1 {
+    margin: 20px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+/* Grid styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(20, 30px);
+    grid-template-rows: repeat(20, 30px);
+    width: max-content;
+    padding: 5px;
+    margin: auto;
+    border: 2px solid black;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+}
+
+.box {
+    width: 30px;
+    height: 30px;
+    border: 1px solid darkgray;
+    color: white;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.row:nth-child(5n) {
+    /* border-bottom: 1px solid black; */
+}
+
+.box:nth-child(5n) {
+    border-right: 1px solid black;
+}
+
+.alive {
+    background-color: rgb(51, 51, 51);
+}
+
+.dead {
+    background-color: whitesmoke;
+}
+
+@media (max-width: 780px) {
+    .grid {
+        grid-template-columns: repeat(20, 18px);
+        grid-template-rows: repeat(20, 18px);
+        padding: 2px;
+    }
+
+    .box {
+        width: 18px;
+        height: 18px;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(20, 10px);
+        grid-template-rows: repeat(20, 10px);
+        padding: 1px;
+    }
+
+    .box {
+        width: 10px;
+        height: 10px;
+    }
+
+    h1 {
+        font-size: 0.8rem;
+    }
+}
