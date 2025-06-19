@@ -100,6 +100,18 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
+// help button event listener
+document.getElementById("help-button").addEventListener("click", () => {
+    let popup = document.getElementById("help-popup")
+    popup.classList.remove("hidden")
+});
+
+document.getElementById("close-help").addEventListener("click", () => {
+    let popup = document.getElementById("help-popup")
+    popup.classList.add("hidden")
+});
+
+
 function count_neighbors(index) {
     /**
      * Counts the number of alive neighbors the box at index has
