@@ -24,6 +24,9 @@ button {
     cursor: pointer;
     font-size: large;
     font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #start-button {
@@ -117,8 +120,8 @@ video {
 }
 
 .box {
-    width: 30px;
-    height: 30px;
+    /* width: 30px;
+    height: 30px; */
     border: 1px solid darkgray;
     color: white;
     display: flex;
@@ -152,32 +155,66 @@ video {
         grid-template-columns: repeat(20, 18px);
         grid-template-rows: repeat(20, 18px);
         padding: 2px;
-    }
-
-    .box {
-        width: 18px;
-        height: 18px;
+        width: 360px;
     }
 
     h1 {
-        font-size: 1rem;
+        margin: 10px;
+        text-align: center;
+        font-weight: 900;
+        font-size: 1.5rem;
     }
 }
 
 
 @media (max-width: 480px) {
     .grid {
-        grid-template-columns: repeat(20, 10px);
-        grid-template-rows: repeat(20, 10px);
+        grid-template-columns: repeat(20, 15px);
+        grid-template-rows: repeat(20, 15px);
         padding: 1px;
-    }
-
-    .box {
-        width: 10px;
-        height: 10px;
+        width: 300px;
     }
 
     h1 {
+        margin: 5px;
+        text-align: center;
+        font-weight: 900;
         font-size: 0.8rem;
+    }
+
+    button {
+        margin: 5px;
+        box-shadow: 1.5px 1.5px black;
+        cursor: pointer;
+        font-size: 0.5rem;
+        font-weight: 800;
+        color: black;
+    }
+
+    #start-button {
+        width: 35px;
+        height: 20px;
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
+
+    #help-button {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+    }
+
+    #refresh-button {
+        width: 50px;
+        height: 20px;
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
+
+    #github-button {
+        width: 45px;
+        height: 20px;
+        padding: 3px 6px;
+        border-radius: 4px;
     }
 }
