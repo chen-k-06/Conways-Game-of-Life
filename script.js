@@ -36,40 +36,58 @@ boxes.forEach((box, index) => {
 });
 
 // main game logic
-let intervalID;
-function start_game() {
+async function start_game() {
     if (inGame) return;
     inGame = true;
     let boxes = document.querySelectorAll(".box");
-    boxes.forEach((box, index) => {
-        let live_neighbors_count = count_neighbors(index);
+    let states = [];
 
-        // Underpopulation
-        // Any live cell with fewer than 2 live neighbors dies (becomes dead).                
-        if (live_neighbors_count < 2) {
-            kill(box);
-        }
+    while (inGame) {
+        boxes.forEach((box, index) => {
+            const isAlive = box.classList.contains("alive");
+            let liveNeighbors = count_neighbors(index);
 
-        //Survival
-        // Any live cell with 2 or 3 live neighbors stays alive.
-        else if (live_neighbors_count < 4) {
-            revive(box);
-        }
+            // Underpopulation
+            // Any live cell with fewer than 2 live neighbors dies (becomes dead).                
+            if (liveNeighbors < 2 && isAlive) {
+                states.push({ box, living: false });
+            }
 
-        //Overpopulation:
-        // Any live cell with more than 3 live neighbors dies.
-        else if (live_neighbors_count > 3) {
-            kill(box);
-        }
+            //Survival
+            // Any live cell with 2 or 3 live neighbors stays alive.
+            else if (liveNeighbors < 4 && isAlive) {
+                states.push({ box, living: true });
+            }
 
-        //Reproduction:
-        // Any dead cell with exactly 3 live neighbors becomes alive.
-        else if (live_neighbors_count == 3) {
-            revive(box);
-        }
+            //Overpopulation:
+            // Any live cell with more than 3 live neighbors dies.
+            else if (liveNeighbors > 3 && isAlive) {
+                states.push({ box, living: false });
+            }
 
-        // sleep(1);
-    });
+            //Reproduction:
+            // Any dead cell with exactly 3 live neighbors becomes alive.
+            else if (liveNeighbors == 3 && !isAlive) {
+                states.push({ box, living: true });
+            }
+
+            states.forEach(({ box, living }) => {
+                if (living) {
+                    revive(box);
+                }
+                else {
+                    kill(box);
+                }
+            });
+
+            let alive_boxes = document.querySelectorAll(".alive");
+            if (alive_boxes.length === 0) {
+                console.log("Game over: no cells alive");
+                inGame = false;
+            }
+        });
+        await sleep(100);
+    }
 }
 
 // start button event listener
@@ -84,13 +102,11 @@ document.addEventListener("keydown", (event) => {
 
 function count_neighbors(index) {
     /**
-     * Calls the API. Ranks all possible guesses based on expected information, taking possible answers
-     * into account. 
+     * Counts the number of alive neighbors the box at index has
      *
-     * @param {no idea} box - a box to count neighbors of
      * @param {number} index - index of the box
  
-     * @returns {number} The number of living neighbors box has 
+     * @returns {number} The number of living neighbors box has, [0,8]
      */
 
     let row = Math.floor(index / SIDE_LENGTH);
@@ -178,6 +194,9 @@ function kill(box) {
     box.classList.add("dead");
 }
 
-// function sleep(seconds) {
-
-// }
+function sleep(ms) {
+    /**
+     * Sleeps for ms milliseconds
+     */
+    return (new Promise(resolve => setTimeout(resolve, ms)));
+}
