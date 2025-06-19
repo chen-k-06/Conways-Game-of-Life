@@ -14,6 +14,16 @@
 <body>
     <div id="top-bar">
         <button id="help-button">?</button>
+        <div id="help-popup" class="popup-blocked">
+            <p>Each square (or "cell") on the grid can be either alive or dead, and they evolve according to the
+                following rules:
+
+                Any live cell with fewer than two live neighbours dies (referred to as underpopulation).
+                Any live cell with more than three live neighbours dies (referred to as overpopulation).
+                Any live cell with two or three live neighbours lives, unchanged, to the next generation.
+                Any dead cell with exactly three live neighbours comes to life.</p>
+            <button>Close</button>
+        </div>
         <h1><u>CONWAY'S GAME OF LIFE</u></h1>
         <button id="start-button">START</button>
         <a href="https://chen-k-06.github.io/Conways-Game-of-Life/"> <button id="refresh-button">REFRESH</button>
