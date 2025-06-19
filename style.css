@@ -39,6 +39,13 @@ button {
     border-radius: 50%;
 }
 
+#refresh-button {
+    width: 120px;
+    height: 50px;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
 button:hover {
     transform: translateY(-3px);
 }
@@ -73,10 +80,6 @@ h1 {
     color: white;
     display: flex;
     box-sizing: border-box;
-}
-
-.row:nth-child(5n) {
-    /* border-bottom: 1px solid black; */
 }
 
 .box:nth-child(5n) {
