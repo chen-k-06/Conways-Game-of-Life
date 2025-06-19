@@ -157,7 +157,38 @@ video {
         margin: 10px;
         text-align: center;
         font-weight: 900;
-        font-size: 1.5rem;
+        font-size: 1rem;
+    }
+
+    button {
+        margin: 5px;
+        box-shadow: 1.5px 1.5px black;
+        font-size: 0.75rem;
+        border-radius: 6px;
+    }
+
+    #start-button {
+        width: 65px;
+        height: 30px;
+        padding: 3px 6px;
+    }
+
+    #help-button {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    #refresh-button {
+        width: 75px;
+        height: 30px;
+        padding: 3px 6px;
+    }
+
+    #github-button {
+        width: 65px;
+        height: 30px;
+        padding: 3px 6px;
     }
 }
 
@@ -180,10 +211,7 @@ video {
     button {
         margin: 5px;
         box-shadow: 1.5px 1.5px black;
-        cursor: pointer;
         font-size: 0.5rem;
-        font-weight: 800;
-        color: black;
     }
 
     .box {
