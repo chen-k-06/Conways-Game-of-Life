@@ -186,6 +186,10 @@ video {
         color: black;
     }
 
+    .box {
+        border: 0.3px solid darkgray;
+    }
+
     #start-button {
         width: 35px;
         height: 20px;
@@ -215,6 +219,7 @@ video {
 
     #help-popup {
         font-size: 1rem;
+        font-weight: 500;
     }
 
     video {
