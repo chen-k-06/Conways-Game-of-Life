@@ -86,7 +86,7 @@ async function start_game() {
                 inGame = false;
             }
         });
-        await sleep(100);
+        await sleep(350);
     }
 }
 

@@ -46,6 +46,13 @@ button {
     border-radius: 8px;
 }
 
+#github-button {
+    width: 110px;
+    height: 50px;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
 button:hover {
     transform: translateY(-3px);
 }
@@ -54,27 +61,43 @@ h1 {
     margin: 20px;
     text-align: center;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 /* Help popup */
 #help-popup {
-    background-color: rgba(202, 202, 202, 0.5);
-    display: flex;
-    margin: 10px;
+    background-color: rgba(202, 202, 202, 0.9);
     border: 2px dotted darkgray;
     padding: 2em;
     text-align: center;
     animation: fade-in 0.3s ease-in-out;
-    width: 75%;
-    height: 75%;
-    max-height: 80vh;
-    justify-content: center;
-    align-items: center;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    width: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    overflow: auto;
 }
 
-.popup-blocked {
+.hidden {
     display: none;
+}
+
+video {
+    height: 50%;
+    width: 90%;
+}
+
+#close-help {
+    border-radius: 8px;
+    box-shadow: 3px 3px black;
+    width: 90px;
+    height: 50px;
+    font-size: 1.3rem;
 }
 
 /* Grid styling */
@@ -144,8 +167,8 @@ h1 {
 
 @media (max-width: 480px) {
     .grid {
-        grid-template-columns: repeat(20, 15px);
-        grid-template-rows: repeat(20, 15px);
+        grid-template-columns: repeat(20, 10px);
+        grid-template-rows: repeat(20, 10px);
         padding: 1px;
     }
 
