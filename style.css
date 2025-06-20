@@ -161,6 +161,7 @@ video {
     }
 
     button {
+        color: black;
         margin: 5px;
         box-shadow: 1.5px 1.5px black;
         font-size: 0.75rem;
@@ -209,6 +210,7 @@ video {
     }
 
     button {
+        color: black;
         margin: 5px;
         box-shadow: 1.5px 1.5px black;
         font-size: 0.5rem;
