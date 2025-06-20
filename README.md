@@ -13,8 +13,6 @@ Play here: https://chen-k-06.github.io/Conways-Game-of-Life/
 
 Learn more here (+ source): https://conwaylife.com/
 
-![image](https://github.com/user-attachments/assets/49c0fca2-8e29-4742-829f-ee93c1d8a31c)
-
 https://github.com/user-attachments/assets/35a4ab8d-ac35-4eb5-a674-e301649d6dd7
 
 
