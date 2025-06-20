@@ -12,3 +12,6 @@ The initial configuration of cells can be created by a human, but all generation
 Play here: https://chen-k-06.github.io/Conways-Game-of-Life/
 
 Learn more here (+ source): https://conwaylife.com/
+
+![image](https://github.com/user-attachments/assets/49c0fca2-8e29-4742-829f-ee93c1d8a31c)
+
